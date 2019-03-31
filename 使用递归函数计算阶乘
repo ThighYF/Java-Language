@@ -1,0 +1,30 @@
+#include<stdio.h>
+unsigned int factorial(unsigned int a);
+int f, x;
+int main(void)
+{
+	puts("Enter an integer value between 1 and 8: ");
+	scanf("%d", &x);
+	if (x > 8 || x < 1)
+	{
+		printf("Please inter a number at 1-8\n");
+
+	}
+	else
+	{
+		f = factorial(x);
+		printf("%d factorial equals %d\n", x, f);
+
+	}
+	return 0;
+}
+unsigned int factorial(unsigned int a)
+{
+	if (a == 1)
+		return 1;
+	else
+	{
+		a *= factorial(a - 1);
+		return a;
+	}
+}
